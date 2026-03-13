@@ -2,6 +2,15 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../translations'
+import bevelImg from '../assets/images/Bevel.png'
+import waterImg from '../assets/images/Waterminder.png'
+import thermomixImg from '../assets/images/Thermomix.png'
+
+const imageMap = {
+  BEVEL_DASHBOARD: bevelImg,
+  WATER_LOGS: waterImg,
+  MEAL_PREP_BAY: thermomixImg,
+}
 
 const pageVariants = {
   initial: { opacity: 0, y: 30 },
@@ -199,7 +208,11 @@ export default function RoadTo110() {
                       <div className="p-6 pt-0 flex flex-col sm:flex-row gap-6 items-start border-t border-lightblue/10 mt-2">
                          {/* Mockup Placeholder */}
                         <div className="w-[150px] aspect-[9/19.5] bg-black/40 rounded-[20px] flex items-center justify-center border-4 border-navy shadow-[0_0_15px_rgba(0,0,0,0.5)] flex-shrink-0 relative overflow-hidden group mx-auto sm:mx-0 ring-1 ring-white/10">
-                          <span className="text-[9px] font-mono tracking-widest text-lightblue/40 uppercase relative z-10 group-hover:text-lightblue/80 transition-colors text-center px-2">[{item.imgAlias}]<br/><span className="text-[7px] opacity-70">IPHONE SCREEN</span></span>
+                          {imageMap[item.imgAlias] ? (
+                            <img src={imageMap[item.imgAlias]} alt={item.title} className="w-full h-full object-cover" />
+                          ) : (
+                            <span className="text-[9px] font-mono tracking-widest text-lightblue/40 uppercase relative z-10 group-hover:text-lightblue/80 transition-colors text-center px-2">[{item.imgAlias}]<br/><span className="text-[7px] opacity-70">IPHONE SCREEN</span></span>
+                          )}
                         </div>
                         {/* Text */}
                         <div className="w-full sm:w-2/3 mt-2 sm:mt-0">

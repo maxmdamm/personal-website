@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { FaLinkedinIn, FaYoutube, FaInstagram, FaEnvelope } from 'react-icons/fa'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../translations'
+import profilePic from '../assets/images/Profile Pic.png'
 
 const timelineVariants = {
   hidden: { opacity: 0 },
@@ -41,7 +42,7 @@ export default function About() {
           <div className="sticky top-32 glass-card p-8 rounded-2xl border border-lightblue/10">
             <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-orange/50 p-1 mb-6 bg-navy shadow-[0_0_30px_rgba(242,100,25,0.15)] mx-auto lg:mx-0">
               <div className="w-full h-full bg-navy flex items-center justify-center rounded-full overflow-hidden relative group">
-                <span className="text-[10px] font-mono tracking-widest text-lightblue/50 uppercase">[ PROFILE_PIC ]</span>
+                <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-orange/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
             </div>
