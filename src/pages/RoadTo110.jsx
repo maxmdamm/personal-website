@@ -5,6 +5,7 @@ import { translations } from '../translations'
 import bevelImg from '../assets/images/Bevel.png'
 import waterImg from '../assets/images/Waterminder.png'
 import thermomixImg from '../assets/images/Thermomix.png'
+import mrtImg from '../assets/images/MRT-Bilder.png'
 
 const imageMap = {
   BEVEL_DASHBOARD: bevelImg,
@@ -66,12 +67,10 @@ export default function RoadTo110() {
         transition={{ duration: 0.6 }}
       >
         <div className="w-full md:w-1/2">
-          {/* Image Placeholder */}
+          {/* MRI Image */}
           <div className="aspect-square relative rounded-2xl overflow-hidden glass-card border border-lightblue/10 group shadow-2xl">
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy/80 hover:bg-navy/60 transition-colors z-0">
-              <span className="material-icons text-5xl text-lightblue/50 mb-4">medical_services</span>
-              <p className="text-sm tracking-widest font-mono text-lightblue/60">[ MRI / CONTEXT IMG ]</p>
-            </div>
+            <img src={mrtImg} alt="MRI Scan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-500 pointer-events-none"></div>
             {/* Outline Glow */}
             <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 group-hover:ring-orange/30 transition-all pointer-events-none"></div>
           </div>
